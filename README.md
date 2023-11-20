@@ -4,7 +4,7 @@
 
 * *Alexnet* <br/>
 ```bash
-accuracy: 
+accuracy: 94.67
 model = models.alexnet(weights=models.AlexNet_Weights.IMAGENET1K_V1)
 num_features = model.classifier[6].in_features
 model.classifier[6] = torch.nn.Linear(num_features, 10)
