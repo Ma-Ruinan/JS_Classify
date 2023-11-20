@@ -1,4 +1,9 @@
 # JS目标分类网络
+## 0.到NAS928上获取权重和数据集
+```bash
+权重位置：/home/nas928/maruinan/Classify_ModelZoo/checkpoints
+数据集位置：/home/nas928/maruinan/Classify_ModelZoo/WQ_dataset
+```
 
 ## 1.训练好的网络包括
 
