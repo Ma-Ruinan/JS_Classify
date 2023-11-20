@@ -12,14 +12,25 @@ model = models.alexnet(weights=models.AlexNet_Weights.IMAGENET1K_V1)
 accuracy: 
 model = models.densenet121(weights=models.DenseNet121_Weights.IMAGENET1K_V1)
 ```
-<br/>***transforms process***<br/>
+## 2.前处理后处理方式
+
+<br/>***Pre-processing***<br/>
 ```bash
 train_transforms = transforms.Compose([transforms.Resize(args.size), transforms.ToTensor()])
+```
+<br/>***Post-processing***<br/>
+```bash
+images = images.to(device)
+labels = labels.to(device)
+outputs = model(images)
+_, predict = torch.max(outputs.data, dim=1)
+total += labels.size(0)
+accuracy = accuracy + (predict == labels).sum().item()
 ```
 
 ---
 
-## 2.网络识别类别索引
+## 3.网络识别类别索引
 ```bash
 0_bazooka （火箭炮）
 1_destroyer（驱逐舰）
@@ -35,7 +46,7 @@ train_transforms = transforms.Compose([transforms.Resize(args.size), transforms.
 
 ---
 
-## 3.数据集文件夹说明
+## 4.数据集文件夹说明
 ```bash
 ├── WQ_dataset
 |   ├── 0_bazooka
