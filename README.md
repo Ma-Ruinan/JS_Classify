@@ -7,7 +7,7 @@
 accuracy: 
 model = models.alexnet(weights=models.AlexNet_Weights.IMAGENET1K_V1)
 ```
-* *Densenet* <br/>
+* *Densenet121* <br/>
 ```bash
 accuracy: 
 model = models.densenet121(weights=models.DenseNet121_Weights.IMAGENET1K_V1)
