@@ -4,7 +4,7 @@
 
 * *Alexnet* <br/>
 ```bash
-accuracy: 94.67
+accuracy: 94.67%
 model = models.alexnet(weights=models.AlexNet_Weights.IMAGENET1K_V1)
 num_features = model.classifier[6].in_features
 model.classifier[6] = torch.nn.Linear(num_features, 10)
@@ -21,7 +21,7 @@ print(output.size()) # torch.Size([4, 10])
 ```
 * *Densenet121* <br/>
 ```bash
-accuracy: 
+accuracy: 97.14%
 model = models.densenet121(weights=models.DenseNet121_Weights.IMAGENET1K_V1)
 num_features = model.classifier.in_features
 model.classifier = torch.nn.Linear(num_features, 10)
@@ -32,6 +32,23 @@ import torch
 input = torch.randn(4, 3, 224, 224)
 input = input.to("cuda")
 model = torch.load("./checkpoints/DenseNet121/1.pth")
+model.to("cuda")
+output = model(input)
+print(output.size()) # torch.Size([4, 10])
+```
+* *ResNet18* <br/>
+```bash
+accuracy: 
+model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+num_features = model.fc.in_features
+model.fc = torch.nn.Linear(num_features, 10)
+```
+```bash
+# 模型加载
+import torch
+input = torch.randn(4, 3, 224, 224)
+input = input.to("cuda")
+model = torch.load("./checkpoints/ResNet18/1.pth")
 model.to("cuda")
 output = model(input)
 print(output.size()) # torch.Size([4, 10])
