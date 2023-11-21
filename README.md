@@ -107,5 +107,3 @@ accuracy = accuracy + (predict == labels).sum().item()
 |   └── 9_hovercraft
 （每类文件夹下是**.jpg**图片）
 '''
-
-
