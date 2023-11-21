@@ -100,10 +100,10 @@ accuracy = accuracy + (predict == labels).sum().item()
 |   ├── 2_fighter
 |   ├── 3_helicopter
 |   ├── 4_radar
-|   └── 5_tank
-|   └── 6_early_warning_aircraft
-|   └── 7_military_transport_vehicle
-|   └── 8_aircraft carrier
+|   ├── 5_tank
+|   ├── 6_early_warning_aircraft
+|   ├── 7_military_transport_vehicle
+|   ├── 8_aircraft carrier
 |   └── 9_hovercraft
 （每类文件夹下是**.jpg**图片）
 '''
